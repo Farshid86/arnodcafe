@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>کافه آرنود</title>
+</head>
+<style>
+    @font-face {
+    font-family: "Vazir";
+    src: url("fonts/Vazir.woff2") format("woff2"),
+         url("fonts/Vazir.woff") format("woff");
+         font-weight: normal;
+         font-style: normal;
+         font-display: swap;
+}
+@font-face {
+    font-family: "Vazir";
+    src: url("fonts/Vazir-Bold.woff2") format("woff2");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+*{
+ font-family: "Vazir";
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    font-family: "Vazir";
+  background: #4f1717;
+  color: #f5d7a1;
+}
+
+.menu-page {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px 16px 40px;
+}
+
+.cafe-header {
+  text-align: center;
+  margin-bottom: 25px;
+  margin-top: 15px;
+}
+
+.cafe-frame {
+  display: inline-block;
+  padding: 20px 47px 20px;
+  border: 3px solid #ffb347;
+  border-top-left-radius: 90px 110px;
+  border-top-right-radius: 90px 110px;
+  color: #ffb347;
+  margin-bottom: 10px;
+  border-bottom-right-radius: 90px 110px;
+  border-bottom-left-radius: 90px 110px;
+}
+
+.cafe-frame h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.lang-row {
+  color: #ffb347;
+  font-size: 0.95rem;
+  margin-top: 8px;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+}
+
+.subtitle {
+  color: #f0c98d;
+  margin-top: 10px;
+  font-size: 0.95rem;
+}
+
+.tabs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 20px 0 22px;
+}
+
+.tab-btn {
+  background: transparent;
+  border: 2px solid #ff8c00;
+  color: #ffd28a;
+  padding: 22px 10px;
+  border-radius: 19px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.25s ease;
+      margin: 5px;
+    margin-top: 10px;
+}
+
+.tab-btn:hover {
+  background: rgba(255, 140, 0, 0.14);
+  transform: translateY(-1px);
+}
+
+.tab-btn.active {
+  background: #ff8c00;
+  color: #4f1717;
+  font-weight: bold;
+}
+
+.menu-content {
+  margin-top: 10px;
+}
+
+.content-box {
+  display: none;
+  border: 2px solid #ff8c00;
+  border-radius: 16px;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.content-box.active {
+  display: block;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 23px;
+  padding: 12px 8px;
+  border-bottom: 1px dashed rgba(255, 179, 71, 0.35);
+  font-size: 1rem;
+  line-height: 40px;
+  
+}
+.item img {
+  width: 30%;
+    border-radius: 20%;
+    height: auto;
+    margin-bottom: 8%;
+
+}
+.item p{
+  margin-right: -18%;
+  
+}
+
+.item:last-child {
+  border-bottom: none;
+}
+
+.item span {
+  color: #ffb347;
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+    padding: 15px;
+    border-radius: 15px;
+    gap: 10px;
+}
+
+
+.item-info {
+    width: 100%;      
+}
+
+.title-container {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;           
+    margin-bottom: 8px;            
+}
+
+.product-name {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.product-price {
+    color: #ffb347;
+    font-weight: bold;
+    white-space: nowrap; 
+}
+
+.product-desc {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.5;
+    text-align: right; 
+}
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+    border-radius: 12px;
+    gap: 10px;
+}
+
+.item img {
+    width: 100%;
+    max-width: 240px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 30px;
+}
+
+.item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+}
+
+.item-info h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #ecbd7b;
+}
+
+.item-info .price {
+    color: #ffb347;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.item-info p {
+    margin: 0;
+    font-size: 14px;
+    color: white;
+    line-height: 1.8;
+}
+
+@media (max-width: 700px) {
+  .tabs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cafe-frame h1 {
+    font-size: 1.6rem;
+  }
+}
+@media (max-width: 480px) {
+.tab-btn{
+    margin-top: 18px;
+    font-size: 18px;
+}
+.cafe-header {
+     margin-bottom: 38px;
+    margin-top: 20px;
+    line-height: 30px;
+}
+}
+
+
+</style>
+<body>
+
+  <section class="menu-page">
+    <header class="cafe-header">
+      <div class="cafe-frame">
+        <h1>کافه آرنود</h1>
+      </div>
+
+      <div class="lang-row">
+       ✦ طعمی که هیچ وقت سیر نمی‌شوی ✦
+
+      </div>
+
+      <p class="subtitle">برای مشاهده قیمت‌ها، منو را انتخاب کنید</p>
+    </header>
+
+    <div class="tabs-grid">
+      <button class="tab-btn active" onclick="showMenu(event, 'Coffe Bar')">نوشیدنی گرم</button>
+      <button class="tab-btn" onclick="showMenu(event, 'Hot Bar')">نوشیدنی سرد</button>
+      <button class="tab-btn" onclick="showMenu(event, 'Milk Shake')">میلک</button>
+      <button class="tab-btn" onclick="showMenu(event, 'Tea')">صبحانه</button>
+      <button class="tab-btn" onclick="showMenu(event, 'damnush')">کیک </button>
+      <button class="tab-btn" onclick="showMenu(event, 'Mocktail')">چای</button>
+      <button class="tab-btn" onclick="showMenu(event, 'dessert')">غذا</button>
+      <button class="tab-btn" onclick="showMenu(event, 'Cold drink')">قلیان</button>
+
+    </div>
+
+    <div class="menu-content">
+
+      <div id="Coffe Bar" class="content-box active">
+        <div class="item">
+    <img src="img/اسپرسو اسپرشیال کامرشیال    در عرض 4 دقیقه طعم 80 عربیکا     20 روبوسکو                                      50 50                     قیمت 240000         200000 (1).jpg" alt="product">
+
+    <div class="item-info">
+        
+        <div class="title-container">
+            <h3 class="product-name">اسپرسو کامرشیال</h3>
+            <span class="product-price">200,000 تومان</span>
+        </div>
+
+        <p class="product-desc">در عرض 4 دقیقه آماده می‌شود، طعم 50% عربیکا و 50% روبوستا</p>
+        
+    </div>
+</div>
+        <div class="item">
+    <img src="img/اسپرسو اسپرشیال کامرشیال    در عرض 4 دقیقه طعم 80 عربیکا     20 روبوسکو                                      50 50                     قیمت 240000         200000 (1).jpg" alt="product">
+
+    <div class="item-info">
+        
+        <div class="title-container">
+            <h3 class="product-name">اسپرسو اسپرشیال</h3>
+            <span class="product-price">240,000 تومان</span>
+        </div>
+
+        <p class="product-desc">در عرض 5 دقیقه آماده می‌شود، طعم 80% عربیکا و 20% روبوستا</p>
+        
+    </div>
+</div>
+<div class="item">
+    <img src="img/امریکانو           در عرض 9 دقیقه       طعم با اب                   قیمت 210000.JPEG" alt="product">
+
+    <div class="item-info">
+        
+        <div class="title-container">
+            <h3 class="product-name">آمریکانو</h3>
+            <span class="product-price">210,000 تومان</span>
+        </div>
+
+        <p class="product-desc">در عرض 9 دقیقه آماده می‌شود، طعم آمریکانو ترکیبی از تلخی ملایم و غلظت قهوه اسپرسو با رقیق بودن آب داغ است</p>
+        
+    </div>
+</div>
+<div class="item">
+    <img src="img/قهوه ترک         در عرض 10 دقیقه           قیمت 220000.JPEG" alt="product">
+
+    <div class="item-info">
+        
+        <div class="title-container">
+            <h3 class="product-name">قهوه ترک</h3>
+            <span class="product-price">220,000 تومان</span>
+        </div>
+
+        <p class="product-desc">در عرض 10 دقیقه آماده می‌شود </p>
+        
+    </div>
+</div>
+<div class="item">
+    <img src="img/وایت چاکلت           در عرض 5 دقیقه          طعم                       شکلات سفید شیر              قسمت 280000.JPEG" alt="product">
+
+    <div class="item-info">
+        
+        <div class="title-container">
+            <h3 class="product-name">وایت چاکلت</h3>
+            <span class="product-price">280,000 تومان</span>
+        </div>
+
+        <p class="product-desc">در عرض 7 دقیقه آماده می‌شود , طعم شکلات سفید و شیر</p>
+        
+    </div>
+</div>
+<div class="item">
+    <img src="img/هات چاکلت    در عرض 5 دقیقه         طعم شکلات و شیر      قیمت 300000.JPEG" alt="product">
+
+    <div class="item-info">
+        
+        <div class="title-container">
+            <h3 class="product-name">هات چاکلت</h3>
+            <span class="product-price">300,000 تومان</span>
+        </div>
+
+        <p class="product-desc">در عرض 5 دقیقه آماده می‌شود , طعم شکلات و شیر</p>
+        
+    </div>
+</div>
+<div class="item">
+    <img src="img/ماسالا      در عرض 10 دقیقه                       طعم زنجبیل دارچین شیر              قیمت 250000.JPEG" alt="product">
+
+    <div class="item-info">
+        
+        <div class="title-container">
+            <h3 class="product-name">ماسالا</h3>
+            <span class="product-price">250,000 تومان</span>
+        </div>
+
+        <p class="product-desc">در عرض 11 دقیقه آماده می‌شود , طعم زنجبیل دارچین و شیر</p>
+        
+    </div>
+</div>
+      </div>
+
+      <div id="Hot Bar" class="content-box">
+  <div class="item">
+    <img src="img/ایس لاته            در غرض 10 دقیقه        طعم شیر اسپرسو           قیمت 280000.JPEG" alt="product">
+
+    <div class="item-info">
+        
+        <div class="title-container">
+            <h3 class="product-name">آیس لاته</h3>
+            <span class="product-price">280,000 تومان</span>
+        </div>
+
+        <p class="product-desc">در عرض 9 دقیقه آماده می‌شود , طعم اسپرسو و شیر</p>
+        
+    </div>
+</div>
+  <div class="item">
+    <img src="img/موهیتو        در عرض 5 دقیقه اماده میشود     طعم لیمو نعناع       2600000.JPEG" alt="product">
+
+    <div class="item-info">
+        
+        <div class="title-container">
+            <h3 class="product-name">موهیتو</h3>
+            <span class="product-price">260,000 تومان</span>
+        </div>
+
+        <p class="product-desc">در عرض 5 دقیقه آماده می‌شود , طعم لیمو و نعناع</p>
+        
+    </div>
+</div>
+  <div class="item">
+    <img src="img/لیموناد           در عرض 5 دقیقه            طعم لیمو            قیمت 240000.JPEG" alt="product">
+
+    <div class="item-info">
+        
+        <div class="title-container">
+            <h3 class="product-name">لیموناد</h3>
+            <span class="product-price">240,000 تومان</span>
+        </div>
+
+        <p class="product-desc">در عرض 5 دقیقه آماده می‌شود , طعم لیمو و آب</p>
+        
+    </div>
+</div>
+  <div class="item">
+    <img src="img/کارامل ماکیاتو       ایس موکا                          در عرض 10 دقیقه              کارامل شیر اسپرسو                   ایس موکا شکلات شیر اسپرسو                       300000                   320000.JPEG" alt="product">
+
+    <div class="item-info">
+        
+        <div class="title-container">
+            <h3 class="product-name">آیس موکا</h3>
+            <span class="product-price">320,000 تومان</span>
+        </div>
+
+        <p class="product-desc">در عرض 10 دقیقه آماده می‌شود , طعم شکلات و شیر و اسپرسو</p>
+        
+    </div>
+</div>
+  <div class="item">
+    <img src="img/کارامل ماکیاتو       ایس موکا                          در عرض 10 دقیقه              کارامل شیر اسپرسو                   ایس موکا شکلات شیر اسپرسو                       300000                   320000.JPEG" alt="product">
+
+    <div class="item-info">
+        
+        <div class="title-container">
+            <h3 class="product-name">کارامل ماکیاتو</h3>
+            <span class="product-price">300,000 تومان</span>
+        </div>
+
+        <p class="product-desc">در عرض 11 دقیقه آماده می‌شود , طعم کارامل و شیر و اسپرسو</p>
+        
+    </div>
+</div>
+  <div class="item">
+    <img src="img/ردسالت      این محصول در 10 ذقیقه اماده میشود                   طعم ترش نمکی (زرشک و انار  )  320000.JPEG" alt="product">
+
+    <div class="item-info">
+        
+        <div class="title-container">
+            <h3 class="product-name">رد سالت</h3>
+            <span class="product-price">320,000 تومان</span>
+        </div>
+
+        <p class="product-desc">در عرض 10 دقیقه آماده می‌شود , طعم ترش نمکی (زرشک و انار  )</p>
+        
+    </div>
+</div>
+  <div class="item">
+    <img src="img/بلو اسکای        در عرض 5 دقیقه اماده میشه      طعم نارگیل و الوور          285000.JPEG" alt="product">
+
+    <div class="item-info">
+        
+        <div class="title-container">
+            <h3 class="product-name">بلو اسکای</h3>
+            <span class="product-price">280,000 تومان</span>
+        </div>
+
+        <p class="product-desc">در عرض 10 دقیقه آماده می‌شود , طعم نارگیل و الوور </p>
+        
+    </div>
+</div>
+  <div class="item">
+    <img src="img/ایس امریکانو      در عرض 10 دقیقه              طعم اسپرسو اب             قیمت 230000.JPEG" alt="product">
+
+    <div class="item-info">
+        
+        <div class="title-container">
+            <h3 class="product-name"> آیس آمریکانو</h3>
+            <span class="product-price">230,000 تومان</span>
+        </div>
+
+        <p class="product-desc">در عرض 12 دقیقه آماده می‌شود , طعم اسپرسو و آب </p>
+        
+    </div>
+</div>
+  <div class="item">
+    <img src="img/افترایت      در عرض 10 دقیقه اماده         طعم کیوی سیب سبز نعناع                          290000.JPEG" alt="product">
+
+    <div class="item-info">
+        
+        <div class="title-container">
+            <h3 class="product-name">افترایت</h3>
+            <span class="product-price">290,000 تومان</span>
+        </div>
+
+        <p class="product-desc">در عرض 10 دقیقه آماده می‌شود , طعم کیوی و سیب سبز و نعناع </p>
+        
+    </div>
+</div>
+  <div class="item">
+    <img src="img/IMG_3259.JPEG" alt="product">
+
+    <div class="item-info">
+        
+        <div class="title-container">
+            <h3 class="product-name">جامائیکا</h3>
+            <span class="product-price">290,000 تومان</span>
+        </div>
+
+        <p class="product-desc">در عرض 10 دقیقه آماده می‌شود , طعم اشرافی، بسیار نرم، متعادل و با کیفیت فوق‌العاده بالا (مانند یک تجربه مخملی و شیرین از شکلات و کارامل). </p>
+        
+    </div>
+</div>
+  <div class="item">
+    <img src="img/IMG_3258 (1).JPEG" alt="product">
+
+    <div class="item-info">
+        
+        <div class="title-container">
+            <h3 class="product-name">بلو هوایی</h3>
+            <span class="product-price">280,000 تومان</span>
+        </div>
+
+        <p class="product-desc">در عرض 10 دقیقه آماده می‌شود , طعم میوه‌ای، ترش و بسیار خنک با حس تازگی فوق‌العاده. </p>
+        
+    </div>
+</div>
+  <div class="item">
+
+    <div class="item-info">
+        
+        <div class="title-container">
+            <h3 class="product-name">آب دوغ</h3>
+            <span class="product-price">150,000 تومان</span>
+        </div>        
+    </div>
+</div>
+  <div class="item">
+
+    <div class="item-info">
+        
+        <div class="title-container">
+            <h3 class="product-name">آب معدنی</h3>
+            <span class="product-price">40,000 تومان</span>
+        </div>        
+    </div>
+</div>
+  <div class="item">
+
+    <div class="item-info">
+        
+        <div class="title-container">
+            <h3 class="product-name">نوشابه کولا</h3>
+            <span class="product-price">90,000 تومان</span>
+        </div>        
+    </div>
+</div>
+  <div class="item">
+
+    <div class="item-info">
+        
+        <div class="title-container">
+            <h3 class="product-name">نوشابه اسپرایت</h3>
+            <span class="product-price">90,000 تومان</span>
+        </div>        
+    </div>
+</div>
+  <div class="item">
+
+    <div class="item-info">
+        
+        <div class="title-container">
+            <h3 class="product-name"> آب فانتزی</h3>
+            <span class="product-price">70,000 تومان</span>
+        </div>        
+    </div>
+</div>
+ </div>
+
+   <div id="Milk Shake" class="content-box">
+  <div class="item">
+    <img src="img/شیک تانگو         در عرض 15 دقیقه          طعم بستنی توت فرنگی کیت کت             قیمت 380000.JPEG" alt="product">
+
+    <div class="item-info">
+        
+        <div class="title-container">
+            <h3 class="product-name">شیک تانگو</h3>
+            <span class="product-price">380,000 تومان</span>
+        </div>
+
+        <p class="product-desc">در عرض 15 دقیقه آماده می‌شود , طعم بستنی و توت فرنگی و کیت کت </p>
+        
+    </div>
+</div>
+  <div class="item">
+    <img src="img/شیک تیرامیسو         در عرض 15 دقیقه  طعم بستنی وانیلی و قهوه بیسکوییت   قیمت 350000.JPEG" alt="product">
+
+    <div class="item-info">
+        
+        <div class="title-container">
+            <h3 class="product-name">شیک تیرامسیو</h3>
+            <span class="product-price">350,000 تومان</span>
+        </div>
+
+        <p class="product-desc">در عرض 15 دقیقه آماده می‌شود , طعم بستنی و  وانیلی و  قهوه و بیسکوییت </p>
+        
+    </div>
+</div>
+  <div class="item">
+    <img src="img/سامبا        در غرص 15 دقیقه                      طعم بستنی شکلاتی موز              قیمت 280000.JPEG" alt="product">
+
+    <div class="item-info">
+        
+        <div class="title-container">
+            <h3 class="product-name">شیک سامبا</h3>
+            <span class="product-price">280,000 تومان</span>
+        </div>
+
+        <p class="product-desc">در عرض 14 دقیقه آماده می‌شود , طعم بستنی شکلاتی و موز     </p>
+        
+    </div>
+</div>
+  <div class="item">
+    <img src="img/ملون چیز      در عرض 15 دقیقه           طعم بستنی وانیلی طالبی پنیر خامه ای      قیمت 330000.JPEG" alt="product">
+
+    <div class="item-info">
+        
+        <div class="title-container">
+            <h3 class="product-name">شیک ملون چیز</h3>
+            <span class="product-price">330,000 تومان</span>
+        </div>
+
+        <p class="product-desc">در عرض 14 دقیقه آماده می‌شود , طعم بستنی وانیلی و طالبی و پنیر خامه ای     </p>
+        
+    </div>
+</div>
+  <div class="item">
+    <img src="img/پینات کافی    در عرض 15 دقیقه      طعم قهوه بستنی وانیلی کره بادام زمینی  قیمت 300000.JPEG" alt="product">
+
+    <div class="item-info">
+        
+        <div class="title-container">
+            <h3 class="product-name">شیک  پینات کافی</h3>
+            <span class="product-price">300,000 تومان</span>
+        </div>
+
+        <p class="product-desc">در عرض 15 دقیقه آماده می‌شود , طعم بستنی وانیلی و کره بادام زمینی و  قهوه      </p>
+        
+    </div>
+</div>
+
+      </div>
+
+      <div id="Tea" class="content-box">
+          <div class="item">
+
+    <div class="item-info">
+        
+        <div class="title-container">
+            <h3 class="product-name">املت</h3>
+            <span class="product-price">210,000 تومان</span>
+        </div>        
+    </div>
+</div>
+  <div class="item">
+
+    <div class="item-info">
+        
+        <div class="title-container">
+            <h3 class="product-name"> قیساوا</h3>
+            <span class="product-price">180,000 تومان</span>
+        </div>        
+    </div>
+</div>
+  <div class="item">
+
+    <div class="item-info">
+        
+        <div class="title-container">
+            <h3 class="product-name">  قیساوا مخصوص</h3>
+            <span class="product-price">350,000 تومان</span>
+        </div>        
+    </div>
+</div>
+  <div class="item">
+    <div class="item-info">
+        
+        <div class="title-container">
+            <h3 class="product-name">پک میز دو نفره</h3>
+            <span class="product-price">950,000 تومان</span>
+        </div>
+
+        <p class="product-desc">در عرض 15 دقیقه آماده می‌شود , املت نیمرو قیساوا صبحانه ایرانی بشقاب میوه نوشیدنی      </p>
+        
+    </div>
+</div>
+  <div class="item">
+
+    <div class="item-info">
+        
+        <div class="title-container">
+            <h3 class="product-name"> نیمرو</h3>
+            <span class="product-price">170,000 تومان</span>
+        </div>        
+    </div>
+</div>
+      </div>
+
+      <div id="damnush" class="content-box">
+   <div class="item">
+    <img src="img/چیزکیک سن سباسدین    در عرض 4 دقیقه    طعم پنیری در کترش شکلات و بلوبری     قیمت 375000.JPEG" alt="product">
+
+    <div class="item-info">
+        
+        <div class="title-container">
+            <h3 class="product-name">چیزکیک سن سباستین</h3>
+            <span class="product-price">375,000 تومان</span>
+        </div>
+
+        <p class="product-desc">در عرض 3 دقیقه آماده می‌شود , طعم پنیری در کترش شکلات و بلوبری  </p>
+        
+    </div>
+</div>
+   <div class="item">
+    <img src="img/کیک شکلاتی    در درض 3 دقیقه  طعم شیرین  شکلات خامه ای     قیمت 3500000.JPEG" alt="product">
+
+    <div class="item-info">
+        
+        <div class="title-container">
+            <h3 class="product-name">کیک شکلاتی</h3>
+            <span class="product-price">355,000 تومان</span>
+        </div>
+
+        <p class="product-desc">در عرض 4 دقیقه آماده می‌شود , طعم   شیرین  شکلات خامه ای  </p>
+        
+    </div>
+</div>
+   <div class="item">
+    <img src="img/تیرامیسو   در عرض 2 دقیقه             طعم لیدی فینگر پنیر خامه ای                  قیمت 320000 (1).jpg" alt="product">
+
+    <div class="item-info">
+        
+        <div class="title-container">
+            <h3 class="product-name"> تیرامسیو</h3>
+            <span class="product-price">320,000 تومان</span>
+        </div>
+
+        <p class="product-desc">در عرض 2 دقیقه آماده می‌شود , طعم  لیدی فینگر پنیر خامه ای   </p>
+        
+    </div>
+</div>
+
+      </div>
+
+      <div id="Mocktail" class="content-box">
+  <div class="item">
+    <img src="img/چای لیوانی در عرض دقیقه     طعم مراکشی  قیمت 100000 (2).jpg" alt="product">
+
+    <div class="item-info">
+        
+        <div class="title-container">
+            <h3 class="product-name">چای لیوانی</h3>
+            <span class="product-price">100,000 تومان</span>
+        </div>
+
+        <p class="product-desc">در عرض 5 دقیقه آماده می‌شود , طعم مراکشی  </p>
+        
+    </div>
+</div>
+   <div class="item">
+    <img src="img/IMG_3212 (1).jpg" alt="product">
+
+    <div class="item-info">
+        
+        <div class="title-container">
+            <h3 class="product-name">چای قوری دو نفره</h3>
+            <span class="product-price">250,000 تومان</span>
+        </div>
+
+        <p class="product-desc">در عرض 5 دقیقه آماده می‌شود .  </p>
+        
+    </div>
+</div>
+
+      </div>
+
+      <div id="dessert" class="content-box">
+   <div class="item">
+    <img src="img/سانرایس طعم پپرونی خمی ایتالیایی سیب زمینی بیکن     در   قیمت  1350000عرض 25 دقیقه (1).jpg" alt="product">
+
+    <div class="item-info">
+        
+        <div class="title-container">
+            <h3 class="product-name"> پیتزا سان رایس</h3>
+            <span class="product-price">1,350,000 تومان</span>
+        </div>
+
+        <p class="product-desc">در عرض 25 دقیقه آماده می‌شود , طعم  پپرونی خمیر ایتالیایی سیب زمینی بیکن   </p>
+        
+    </div>
+</div>
+   <div class="item">
+    <img src="img/سوپ خامه ای در عرض  5 دقیقه   طعم س (1).jpg" alt="product">
+
+    <div class="item-info">
+        
+        <div class="title-container">
+            <h3 class="product-name"> سوپ خامه ای </h3>
+            <span class="product-price">150,000 تومان</span>
+        </div>
+
+        <p class="product-desc">در عرض 5 دقیقه آماده می‌شود  </p>
+        
+    </div>
+</div>
+   <div class="item">
+    <img src="img/هات برگر   در عرض 15    طعم گوشت برگر پنیر گودا هالوپینو کاهو گوجه سس کف برگر  دقیقه     قیمت 780000.JPEG" alt="product">
+
+    <div class="item-info">
+        
+        <div class="title-container">
+            <h3 class="product-name"> هات برگر </h3>
+            <span class="product-price">780,000 تومان</span>
+        </div>
+
+        <p class="product-desc">در عرض 15 دقیقه آماده می‌شود , طعم گوشت برگر پنیر گودا هالوپینو کاهو گوجه سس کف برگر   </p>
+        
+    </div>
+</div>
+   <div class="item">
+    <img src="img/سیب زمینی ارنود   در عرض 10 دقیقه     سیبزمنی بیکن دیپ گودا سس مخصوص    قیمت 590000.JPEG" alt="product">
+
+    <div class="item-info">
+        
+        <div class="title-container">
+            <h3 class="product-name"> سیب زمینی آرنود</h3>
+            <span class="product-price">590,000 تومان</span>
+        </div>
+
+        <p class="product-desc">در عرض 10 دقیقه آماده می‌شود , طعم  سیبزمنی بیکن دیپ گودا سس مخصوص    </p>
+        
+    </div>
+</div>
+   <div class="item">
+    <img src="img/خوراک مرغ  طعم  سینه مرغ کاهو گوجه 300000 در عرض 15 دقیقه.jpg" alt="product">
+
+    <div class="item-info">
+        
+        <div class="title-container">
+            <h3 class="product-name">خوراک مرغ </h3>
+            <span class="product-price">590,000 تومان</span>
+        </div>
+
+        <p class="product-desc">در عرض 15 دقیقه آماده می‌شود , طعم سینه مرغ کاهو گوجه  </p>
+        
+    </div>
+</div>
+   <div class="item">
+    <img src="img/چیکن    در عرض 20 دقیقه     فیله مرغ سس پستو قارچ فلفل دلمه زیتون   قیمت 750000.JPEG" alt="product">
+
+    <div class="item-info">
+        
+        <div class="title-container">
+            <h3 class="product-name">پیتزا چیکن </h3>
+            <span class="product-price">750,000 تومان</span>
+        </div>
+
+        <p class="product-desc">در عرض 20 دقیقه آماده می‌شود , طعم  فیله مرغ سس پستو قارچ فلفل دلمه زیتون   </p>
+        
+    </div>
+</div>
+   <div class="item">
+    <img src="img/پیتزا مکزیک امریکایی    در عرض 20 دقیقه              طعم چرخ کرده پپرونی  450000.JPEG" alt="product">
+
+    <div class="item-info">
+        
+        <div class="title-container">
+            <h3 class="product-name">پیتزا مکزیک آمریکایی </h3>
+            <span class="product-price">450,000 تومان</span>
+        </div>
+
+        <p class="product-desc">در عرض 20 دقیقه آماده می‌شود , طعم چرخ کرده پپرونی </p>
+        
+    </div>
+</div>
+   <div class="item">
+    <img src="img/پیتزا بیف استرا گانوف    در عرض   25     طعم   راسته گوساله قارچ سس خامه ای خلال سیب زمینی دقیقه      قیمت  11000000.JPEG" alt="product">
+
+    <div class="item-info">
+        
+        <div class="title-container">
+            <h3 class="product-name">پیتزا بیف استرا گانوف </h3>
+            <span class="product-price">1,100,000 تومان</span>
+        </div>
+
+        <p class="product-desc">در عرض 20 دقیقه آماده می‌شود , طعم راسته گوساله قارچ سس خامه ای خلال سیب زمینی </p>
+        
+    </div>
+</div>
+   <div class="item">
+    <img src="img/پیتزا ارنود       در عرض 25 دقیقه     طعم خمیر ایتالیایی فیله گوساله و مرغ  فلفل دلمه   قیمت 1300000.JPEG" alt="product">
+
+    <div class="item-info">
+        
+        <div class="title-container">
+            <h3 class="product-name">پیتزا آرنود </h3>
+            <span class="product-price">1,350,000 تومان</span>
+        </div>
+
+        <p class="product-desc">در عرض 25 دقیقه آماده می‌شود , طعم  خمیر ایتالیایی فیله گوساله و مرغ  فلفل دلمه </p>
+        
+    </div>
+</div>
+   <div class="item">
+    <img src="img/پاستا چیکن       پاستا پنه مرغ سس الفردو پنیر پارمسان       در عرض 10 دقیقه      قیمت 450000.JPEG" alt="product">
+
+    <div class="item-info">
+        
+        <div class="title-container">
+            <h3 class="product-name">پاستا چیکن </h3>
+            <span class="product-price">450,000 تومان</span>
+        </div>
+
+        <p class="product-desc">در عرض 10 دقیقه آماده می‌شود , طعم   پاستا پنه مرغ سس الفردو پنیر پارمسان </p>
+        
+    </div>
+</div>
+   <div class="item">
+    <img src="img/IMG_3283.JPEG" alt="product">
+
+    <div class="item-info">
+        
+        <div class="title-container">
+            <h3 class="product-name">پیتزا قارچ و مرغ </h3>
+            <span class="product-price">750,000 تومان</span>
+        </div>
+
+        <p class="product-desc">در عرض 25 دقیقه آماده می‌شود  </p>
+        
+    </div>
+</div>
+   <div class="item">
+    <img src="img/IMG_3297.jpg" alt="product">
+
+    <div class="item-info">
+        
+        <div class="title-container">
+            <h3 class="product-name"> پیتزا مخلوط </h3>
+            <span class="product-price">630,000 تومان</span>
+        </div>
+
+        <p class="product-desc">در عرض 25 دقیقه آماده می‌شود </p>
+        
+    </div>
+</div>       
+
+      </div>
+
+      <div id="Cold drink" class="content-box">
+        <div class="item">مسکو<span>600,000 تومان</span></div>
+        <div class="item">دژاوو<span>600,000 تومان</span></div>
+        <div class="item">پرتغال نعناع <span>600,000 تومان</span></div>
+        <div class="item"> هندوانه یخ <span>600,000 تومان</span></div>
+        <div class="item">زعفران بستنی<span>600,000 تومان</span></div>
+        <div class="item"> آدامس کوهی <span>600,000 تومان</span></div>
+        <div class="item">بیسکوییت بستنی<span>600,000 تومان</span></div>
+        <div class="item">بیسکوییت <span>600,000 تومان</span></div>
+        <div class="item">دو سیب آلبالو <span>600,000 تومان</span></div>
+        <div class="item">آدامس دارچین<span>600,000 تومان</span></div>
+        <div class="item">لاو<span>600,000 تومان</span></div>
+        <div class="item">آدامس نعناع<span>600,000 تومان</span></div>
+        <div class="item">نعناع یخ<span>600,000 تومان</span></div>
+        <div class="item">لیدی<span>600,000 تومان</span></div>
+
+      </div>
+
+    </div>
+  </section>
+
+</body>
+<script>
+function showMenu(evt, categoryId) {
+  document.querySelectorAll(".content-box").forEach(box => {
+    box.classList.remove("active");
+  });
+
+  document.querySelectorAll(".tab-btn").forEach(btn => {
+    btn.classList.remove("active");
+  });
+
+  document.getElementById(categoryId).classList.add("active");
+
+  evt.currentTarget.classList.add("active");
+}
+</script>
+</html>
